@@ -9,8 +9,16 @@ public class PlayerMove : MonoBehaviour {
 
 	// Update is called once per frames
 	void Update () {
-		float inputX = Input.GetAxis("Horizontal");
-		float inputY = Input.GetAxis("Vertical");
+		float inputX = 0;
+		float inputY = 0;
+
+		if (Input.GetKey ("left")){
+			inputX = -1;
+		}
+		if (Input.GetKey ("right")){
+			inputX = 1;
+		}
+		
 
 		movement = new Vector2(
 			speed.x * inputX,
